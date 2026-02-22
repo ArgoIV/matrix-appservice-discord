@@ -119,7 +119,7 @@ export class PresenceHandler {
         // How do we show multiple activities?
         const activity = presence.activities[0];
         if (activity) {
-            const type = activity.type[0] + activity.type.substring(1).toLowerCase(); // STREAMING -> Streaming;
+            const type = activity.type ? activity.type[0] + activity.type.substring(1).toLowerCase() : "Playing";
             status.StatusMsg = `${type} ${activity.name}`;
             if (activity.url) {
                 status.StatusMsg += ` | ${activity.url}`;
